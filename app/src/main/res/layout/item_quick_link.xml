@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="@dimen/dp10"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/ivQuickLinkItem"
+        android:layout_width="@dimen/dp50"
+        android:layout_height="@dimen/dp50"
+        android:scaleType="fitXY"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed"
+        app:layout_constraintBottom_toTopOf="@id/tvQuickLinkItem"/>
+
+    <TextView
+        android:id="@+id/tvQuickLinkItem"
+        android:layout_width="@dimen/dp80"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:textColor="@color/cardview_dark_background"
+        android:textSize="@dimen/sp13"
+        app:layout_constraintEnd_toEndOf="@id/ivQuickLinkItem"
+        app:layout_constraintStart_toStartOf="@id/ivQuickLinkItem"
+        app:layout_constraintTop_toBottomOf="@id/ivQuickLinkItem"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

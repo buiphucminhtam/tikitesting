@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tool="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/dp10">
+
+    <ImageView
+        android:id="@+id/ivFlashDealItem"
+        android:layout_width="@dimen/dp120"
+        android:layout_height="0dp"
+        android:scaleType="centerInside"
+        app:layout_constraintDimensionRatio="12:15"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvPriceFlashDealItem"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp6"
+        android:textColor="#000"
+        android:textSize="@dimen/sp18"
+        app:layout_constraintEnd_toEndOf="@id/ivFlashDealItem"
+        app:layout_constraintStart_toStartOf="@id/ivFlashDealItem"
+        app:layout_constraintTop_toBottomOf="@id/ivFlashDealItem"
+        tool:text="199.000" />
+
+    <ProgressBar
+        android:id="@+id/pgFlashDealItem"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/dp20"
+        android:layout_marginTop="@dimen/dp6"
+        android:max="100"
+        android:progressDrawable="@drawable/custom_progressbar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvPriceFlashDealItem" />
+
+    <TextView
+        android:id="@+id/tvDiscountPercentFlashDealItem"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/background_discount"
+        android:paddingStart="@dimen/dp6"
+        android:paddingTop="@dimen/dp5"
+        android:paddingEnd="@dimen/dp6"
+        android:paddingBottom="@dimen/dp5"
+        android:textColor="#fff"
+        android:textSize="@dimen/sp14"
+        app:layout_constraintEnd_toEndOf="@id/ivFlashDealItem"
+        app:layout_constraintTop_toTopOf="@id/ivFlashDealItem"
+        tool:text="-90%" />
+
+    <TextView
+        android:id="@+id/tvProgressStatusFlashDealItem"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#E6FFFFFF"
+        android:textSize="@dimen/sp12"
+        app:layout_constraintEnd_toEndOf="@id/pgFlashDealItem"
+        app:layout_constraintStart_toStartOf="@id/pgFlashDealItem"
+        app:layout_constraintTop_toTopOf="@id/pgFlashDealItem" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

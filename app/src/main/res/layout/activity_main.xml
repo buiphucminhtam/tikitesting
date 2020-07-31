@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.swiperefreshlayout.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/swRefresh"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_constraintTop_toTopOf="parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#FDFDFD"
+        tools:context=".MainActivity">
+
+        <ImageView
+            android:id="@+id/ivBackGroundTopBar"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="#D00000FF"
+            android:scaleType="fitXY"
+            app:layout_constraintDimensionRatio="16:10"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/ivLogoTiki"
+            android:layout_width="@dimen/dp50"
+            android:layout_height="@dimen/dp50"
+            android:layout_marginTop="@dimen/dp30"
+            android:src="@drawable/ic_logo_tiki"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/ivBackGroundTopBar" />
+
+        <ImageView
+            android:id="@+id/ivChat"
+            android:layout_width="@dimen/dp26"
+            android:layout_height="@dimen/dp26"
+            android:layout_marginEnd="@dimen/dp20"
+            android:src="@drawable/ic_message"
+            app:layout_constraintBottom_toBottomOf="@id/ivLogoTiki"
+            app:layout_constraintEnd_toStartOf="@id/ivCart"
+            app:layout_constraintTop_toTopOf="@id/ivLogoTiki" />
+
+        <ImageView
+            android:id="@+id/ivCart"
+            android:layout_width="@dimen/dp26"
+            android:layout_height="@dimen/dp26"
+            android:layout_marginEnd="@dimen/dp20"
+            android:src="@drawable/ic_cart"
+            app:layout_constraintBottom_toBottomOf="@id/ivLogoTiki"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/ivLogoTiki" />
+
+        <EditText
+            android:id="@+id/edtSearch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp20"
+            android:layout_marginEnd="@dimen/dp20"
+            android:background="@drawable/background_search"
+            android:drawableStart="@drawable/ic_search"
+            android:drawablePadding="@dimen/dp10"
+            android:hint="@string/hint_search"
+            android:padding="@dimen/dp10"
+            android:textColorHint="#706A6A"
+            android:textSize="@dimen/sp16"
+            app:layout_constraintTop_toBottomOf="@id/ivLogoTiki" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvBanner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp20"
+            android:layout_marginTop="@dimen/dp20"
+            android:layout_marginEnd="@dimen/dp10"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/edtSearch" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvQuickLinkList"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp10"
+            android:layout_marginEnd="@dimen/dp10"
+            android:layout_marginTop="@dimen/dp10"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/rvBanner" />
+
+
+        <include
+            layout="@layout/layout_flash_deal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/rvQuickLinkList" />
+
+        <ProgressBar
+            android:id="@+id/pgBannerLoad"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="@id/rvQuickLinkList"
+            app:layout_constraintTop_toTopOf="@id/rvBanner" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
